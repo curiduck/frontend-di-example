@@ -11,9 +11,7 @@ export class DefaultCompanyServiceImpl implements ICompanyService {
 
   constructor() {
     // @Inject(() => HttpConnectorServiceImpl) connectorService: IConnectorService
-    this.connectorService = Container.get<IConnectorService>(
-      HttpConnectorServiceImpl
-    );
+    this.connectorService = Container.get<IConnectorService>("connector.http");
   }
 
   getConnection = () => {
@@ -38,7 +36,7 @@ export class DefaultCompanyServiceImpl implements ICompanyService {
     const connector = this.getConnection();
     connector.send();
     connector.receive();
-    return ["회사 설명 1", "회사 설명2"];
+    return ["회사 설명 1", " 회사 설명 2"];
   }
   getCompanyPhoto(): string[] {
     const connector = this.getConnection();

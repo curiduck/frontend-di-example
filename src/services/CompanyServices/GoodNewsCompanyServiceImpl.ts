@@ -10,9 +10,8 @@ export class GoodNewsCompanyServiceImpl implements ICompanyService {
   private readonly connectorService: IConnectorService;
 
   constructor() {
-    this.connectorService = Container.get<IConnectorService>(
-      HttpConnectorServiceImpl
-    );
+    this.connectorService =
+      Container.get<IConnectorService>("connector.socket");
   }
 
   getConnection = () => {

@@ -1,7 +1,7 @@
 import { Service } from "typedi";
 import { IConnectorService } from "./IConnectorService";
 
-@Service({ id: "connector.socket" })
+@Service()
 export class SocketConnectorServiceImpl implements IConnectorService {
   createConnector(destinationUri: string): Connector {
     // 생성되었다고 가정한다.

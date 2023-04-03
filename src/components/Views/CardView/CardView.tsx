@@ -1,6 +1,17 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import { ViewPropsType } from "../View.type";
 import Utils from "../../../utils";
+
+const PictureList = styled.div`
+  margin: 10px;
+  display: flex;
+`;
+
+const Picture = styled.img`
+  width: 320px;
+  margin-right: 10px;
+`;
 
 // @ts-ignore
 const companyService: ICompanyService =
@@ -21,11 +32,11 @@ function CardView() {
       </ul>
 
       <span>회사 사진: </span>
-      <ul>
-        {companyPhotos.map((photo: string) => (
-          <li>{photo}</li>
+      <PictureList>
+        {companyPhotos.map((photoUri: string) => (
+          <Picture src={photoUri} />
         ))}
-      </ul>
+      </PictureList>
     </>
   );
 }

@@ -13,7 +13,7 @@ const BodyContent = styled.div`
   flex-direction: column;
   flex: 1 1 0;
   margin: 0px 200px 0px 200px;
-  padding-top: 10px;
+  padding: 20px 10px 10px 10px;
   height: 100%;
   background-color: aliceblue;
 `;

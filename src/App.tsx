@@ -4,9 +4,6 @@ import Container from "typedi";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import { DefaultCompanyServiceImpl } from "./services/CompanyServices/DefaultCompanyServieImpl";
-import { GoodNewsCompanyServiceImpl } from "./services/CompanyServices/GoodNewsCompanyServiceImpl";
-import { ICompanyService } from "./services/CompanyServices/ICompanyService";
 
 const AppFrame = styled.div`
   display: flex;

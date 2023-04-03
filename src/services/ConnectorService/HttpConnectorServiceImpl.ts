@@ -1,7 +1,7 @@
 import { Service } from "typedi";
 import { IConnectorService } from "./IConnectorService";
 
-@Service("connector.http")
+@Service()
 export class HttpConnectorServiceImpl implements IConnectorService {
   createConnector(destinationUri: string): Connector {
     // 실제 객체가 생성되었다고 가정한다.
