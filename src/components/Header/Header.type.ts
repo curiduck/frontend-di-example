@@ -1,3 +1,5 @@
+import { ICompanyService } from "../../services/CompanyServices/ICompanyService";
+
 export type HeaderPropTypes = {
-  companyName: string;
+  companyService: ICompanyService;
 };

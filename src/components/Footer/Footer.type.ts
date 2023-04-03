@@ -1,5 +1,7 @@
+import { ICompanyService } from "../../services/CompanyServices/ICompanyService";
+
 export type FooterPropTypes = {
-  companyInformation: CompanyInformation;
+  companyService: ICompanyService;
 };
 
 export type CompanyInformation = {

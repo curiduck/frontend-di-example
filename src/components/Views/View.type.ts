@@ -1,7 +1,6 @@
 import React from "react";
+import { ICompanyService } from "../../services/CompanyServices/ICompanyService";
 
-export interface ViewInterface {
-  fetchCompanyDescription(): void;
-  fetchCompanyPhoto(): void;
-  render(): JSX.Element;
-}
+export type ViewPropsType = {
+  companySerivce: ICompanyService;
+};

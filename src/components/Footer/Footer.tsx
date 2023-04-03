@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
 import { FooterPropTypes } from "./Footer.type";
+import Utils from "../../utils";
 
 const FooterFrame = styled.div`
   //display: flex;
@@ -17,8 +18,19 @@ const CompanyInformation = styled.ul`
   font-weight: 700;
   line-height: 30px;
 `;
-const Footer = ({ companyInformation }: FooterPropTypes) => {
-  const { name, phoneNumber, ceoName, email, registerNumber } =
+
+// @ts-ignore
+const companyService: ICompanyService =
+  // @ts-ignore
+  Utils.getContainerByCompanyUrlPath("company");
+
+const Footer = () => {
+  const companyInformation = useMemo(() => {
+    const companyData = companyService.getCompanyData();
+    return companyData;
+  }, [companyService]);
+
+  const { name, contactNumber, ceoName, email, registerNumber }: CompanyData =
     companyInformation;
 
   return (
@@ -27,7 +39,7 @@ const Footer = ({ companyInformation }: FooterPropTypes) => {
         <CompanyInformationWrapper>
           <CompanyInformation>
             <li>Name: {name}</li>
-            <li>Tel: {phoneNumber}</li>
+            <li>Tel: {contactNumber}</li>
             <li>CEO: {ceoName}</li>
             <li>Email: {email}</li>
             <li>Register Number: {registerNumber}</li>
