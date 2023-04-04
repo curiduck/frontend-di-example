@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import DataView from "../DataView";
+import { BodyPropTypes } from "./Body.type";
 
 const BodyFrame = styled.div`
   display: flex;
@@ -18,11 +19,11 @@ const BodyContent = styled.div`
   background-color: aliceblue;
 `;
 
-const Body = () => (
+const Body = (props: BodyPropTypes) => (
   <>
     <BodyFrame>
       <BodyContent>
-        <DataView />
+        <DataView {...props} />
       </BodyContent>
     </BodyFrame>
   </>

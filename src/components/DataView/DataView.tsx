@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ViewPropsType } from "./View.type";
-import Utils from "../../utils";
-
 const ViewFrame = styled.div`
   flex: 9 9 0;
 `;
@@ -17,20 +15,12 @@ const Picture = styled.img`
   margin-right: 10px;
 `;
 
-// @ts-ignore
-const companyService: ICompanyService =
-  // @ts-ignore
-  Utils.getContainerByCompanyUrlPath("company");
-
-function DataView() {
-  const companyDescription = companyService.getCompanyDescription();
-  const companyPhotos = companyService.getCompanyPhoto();
-
+function DataView({ companyDescriptions, companyPhotos }: ViewPropsType) {
   return (
     <ViewFrame>
       <span>회사에 대한 설명: </span>
       <ul>
-        {companyDescription.map((description: string) => (
+        {companyDescriptions.map((description: string) => (
           <li>{description}</li>
         ))}
       </ul>
