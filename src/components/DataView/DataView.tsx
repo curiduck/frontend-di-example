@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { ViewPropsType } from "../View.type";
-import Utils from "../../../utils";
+import { ViewPropsType } from "./View.type";
+import Utils from "../../utils";
+
+const ViewFrame = styled.div`
+  flex: 9 9 0;
+`;
 
 const PictureList = styled.div`
   margin: 10px;
@@ -18,12 +22,12 @@ const companyService: ICompanyService =
   // @ts-ignore
   Utils.getContainerByCompanyUrlPath("company");
 
-function CardView() {
+function DataView() {
   const companyDescription = companyService.getCompanyDescription();
   const companyPhotos = companyService.getCompanyPhoto();
 
   return (
-    <>
+    <ViewFrame>
       <span>회사에 대한 설명: </span>
       <ul>
         {companyDescription.map((description: string) => (
@@ -37,8 +41,8 @@ function CardView() {
           <Picture src={photoUri} />
         ))}
       </PictureList>
-    </>
+    </ViewFrame>
   );
 }
 
-export default CardView;
+export default DataView;

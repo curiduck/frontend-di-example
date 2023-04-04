@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import DataPanel from "../DataPanel";
+import DataView from "../DataView";
 
 const BodyFrame = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ const Body = () => (
   <>
     <BodyFrame>
       <BodyContent>
-        <DataPanel />
+        <DataView />
       </BodyContent>
     </BodyFrame>
   </>
