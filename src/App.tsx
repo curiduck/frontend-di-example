@@ -23,7 +23,7 @@ function App() {
 
   return (
     <AppFrame>
-      <Header companyName={companyData?.name} />
+      <Header companyName={companyData.name} />
       <Body
         companyDescriptions={companyDescriptions}
         companyPhotos={companyPhotos}
