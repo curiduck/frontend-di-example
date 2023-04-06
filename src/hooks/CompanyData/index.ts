@@ -11,6 +11,14 @@ const defaultCompanyData: CompanyData = {
   registerNumber: "1111-222-333-444",
 };
 
+const getHttpConnector = (uri: string) => {
+  return createConnector({
+    type: "http",
+    dataType: "json",
+    uri,
+  });
+};
+
 /**
  * 회사 데이터를 가지고온다.
  */
@@ -19,11 +27,7 @@ export const useCompanyData = () => {
     useState<CompanyData>(defaultCompanyData);
 
   useEffect(() => {
-    const connector = createConnector({
-      type: "http",
-      dataType: "json",
-      uri: `${fetchURL}/companyData`,
-    });
+    const connector = getHttpConnector(`${fetchURL}/companyData`);
     connector.send();
     connector.receive();
 
@@ -48,11 +52,7 @@ export const useCompanyDescriptions = () => {
     []
   );
   useEffect(() => {
-    const connector = createConnector({
-      type: "http",
-      dataType: "json",
-      uri: `${fetchURL}/companyDescription`,
-    });
+    const connector = getHttpConnector(`${fetchURL}/companyDescription`);
     connector.send();
     connector.receive();
 
@@ -72,11 +72,7 @@ export const useCompanyDescriptions = () => {
 export const useCompanyPhotos = () => {
   const [companyPhotos, setCompanyPhotos] = useState<Array<string>>([]);
 
-  const connector = createConnector({
-    type: "http",
-    dataType: "json",
-    uri: `${fetchURL}/companyPhotos`,
-  });
+  const connector = getHttpConnector(`${fetchURL}/companyPhotos`);
   connector.send();
   connector.receive();
 
