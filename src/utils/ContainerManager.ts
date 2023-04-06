@@ -19,32 +19,6 @@ const serviceRecord: ServiceRecordType = {
   "company.goodtrade": GoodTradeCompanyServiceImpl,
 };
 
-// key를 통한 Dependency Loading
-// Container.set({
-//   id: "connector.socket",
-//   type: SocketConnectorServiceImpl,
-// });
-
-// Container.set({
-//   id: "connector.http",
-//   type: HttpConnectorServiceImpl,
-// });
-
-// Container.set({
-//   id: "company.default",
-//   type: DefaultCompanyServiceImpl,
-// });
-
-// Container.set({
-//   id: "company.goodnews",
-//   type: GoodNewsCompanyServiceImpl,
-// });
-
-// Container.set({
-//   id: "company.goodtrade",
-//   type: GoodTradeCompanyServiceImpl,
-// });
-
 export const getContainer = (prefix: string, suffix: string): any => {
   if (!prefix) throw new Error("Prefix must be designated!");
   if (!suffix) suffix = "default";
@@ -55,9 +29,8 @@ export const getContainer = (prefix: string, suffix: string): any => {
 };
 
 export const getContainerByCompanyUrlPath = (prefix: string): any => {
-  const urlTokens = window.location.pathname.split("/");
-  const companyUrlToken = urlTokens[urlTokens.length - 1];
-  return getContainer(prefix, companyUrlToken);
+  const [, pathName] = window.location.pathname.split("/");
+  return getContainer(prefix, pathName);
 };
 
 export default { getContainer, getContainerByCompanyUrlPath };

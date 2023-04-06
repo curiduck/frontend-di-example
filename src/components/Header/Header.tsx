@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import styled from "styled-components";
 import Utils from "../../utils";
-import { HeaderPropTypes } from "./Header.type";
 import { ICompanyService } from "../../services/CompanyServices/ICompanyService";
 
 const HeaderFrame = styled.div`

@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import Container, { Inject, Service } from "typedi";
+import Container, { Service } from "typedi";
 import { ICompanyService } from "./ICompanyService";
 import type { IConnectorService } from "../ConnectorService/IConnectorService";
 import { HttpConnectorServiceImpl } from "../ConnectorService/HttpConnectorServiceImpl";
