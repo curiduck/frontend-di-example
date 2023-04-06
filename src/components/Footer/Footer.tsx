@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import styled from "styled-components";
-import { FooterPropTypes } from "./Footer.type";
 import Utils from "../../utils";
+import { ICompanyService } from "../../services/CompanyServices/ICompanyService";
 
 const FooterFrame = styled.div`
   //display: flex;
@@ -19,9 +19,7 @@ const CompanyInformation = styled.ul`
   line-height: 30px;
 `;
 
-// @ts-ignore
 const companyService: ICompanyService =
-  // @ts-ignore
   Utils.getContainerByCompanyUrlPath("company");
 
 const Footer = () => {

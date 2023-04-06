@@ -4,7 +4,8 @@ import { IConnectorService } from "./IConnectorService";
 @Service()
 export class SocketConnectorServiceImpl implements IConnectorService {
   createConnector(destinationUri: string): Connector {
-    // 생성되었다고 가정한다.
+    // 실제 객체가 생성되었다고 가정한다.
+    // 현재 예제는 모킹 데이터이다
     return {
       type: "socket",
       dataType: "json",

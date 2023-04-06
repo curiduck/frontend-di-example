@@ -21,9 +21,7 @@ const CompanyName = styled.div`
   align-items: center;
 `;
 
-// @ts-ignore
 const companyService: ICompanyService =
-  // @ts-ignore
   Utils.getContainerByCompanyUrlPath("company");
 
 const Header = () => {

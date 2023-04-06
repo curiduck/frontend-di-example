@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { ViewPropsType } from "./View.type";
 import Utils from "../../utils";
+import { ICompanyService } from "../../services/CompanyServices/ICompanyService";
 
 const ViewFrame = styled.div`
   flex: 9 9 0;
@@ -17,9 +17,7 @@ const Picture = styled.img`
   margin-right: 10px;
 `;
 
-// @ts-ignore
 const companyService: ICompanyService =
-  // @ts-ignore
   Utils.getContainerByCompanyUrlPath("company");
 
 function DataView() {
