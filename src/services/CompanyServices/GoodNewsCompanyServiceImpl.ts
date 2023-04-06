@@ -38,6 +38,7 @@ export class GoodNewsCompanyServiceImpl implements ICompanyService {
     const connector = this.getConnection();
     connector.send();
     connector.receive();
+
     return [
       "항상 좋은 소식을 알려주는 언론사입니다.",
       "언제나 빠르고 정확한 설명을 전달해줍니다",
@@ -47,6 +48,7 @@ export class GoodNewsCompanyServiceImpl implements ICompanyService {
     const connector = this.getConnection();
     connector.send();
     connector.receive();
+
     return [
       "https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_1280.jpg",
       "https://cdn.pixabay.com/photo/2017/05/22/07/20/press-2333329_1280.jpg",

@@ -1,5 +1,5 @@
 declare type Connector = {
-  type: "socket" | "http" | "ssh";
+  type: "socket" | "http";
   dataType: "xml" | "json" | "plainText";
   localIp: string;
   destinationUri: string;

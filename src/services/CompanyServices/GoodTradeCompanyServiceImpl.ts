@@ -37,6 +37,7 @@ export class GoodTradeCompanyServiceImpl implements ICompanyService {
     const connector = this.getConnection();
     connector.send();
     connector.receive();
+
     return [
       "잘 팔리는 물건만 수입하는 상사",
       "수출이 필요할땐 언제든 팔아드립니다",
